@@ -1,0 +1,44 @@
+.tabPill {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: solid rgba(64, 102, 124, 1) 1px;
+  cursor: pointer;
+  height: 59px;
+  min-height: 25px;
+  width: 227px;
+  margin-bottom: 1.3em;
+
+  @media only screen and (max-width: 425px){
+    width: 80vw;
+  }
+
+  .tabLink {
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: normal normal normal 18px/1.4em worksans-extralight, 'work sans',
+      sans-serif;
+    transition: color 0.4s ease 0s;
+    color: #c7ad7b;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.6);
+    border-color: transparent;
+
+    .tabLink {
+      color: white;
+    }
+  }
+}

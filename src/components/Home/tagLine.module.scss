@@ -1,0 +1,60 @@
+.tagLineContainer {
+  max-width: 390px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 1;
+  position: relative;
+  margin: 8em auto 0;
+
+  .iconImg {
+    max-height: 50px;
+    width: 65px;
+    margin-bottom: 2em;
+  }
+
+  .text {
+    display: flex;
+    transition: font 0.3s ease-in-out;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    text-align: start;
+    text-transform: uppercase;
+    font: normal normal normal 88px/1.4em worksans-extralight, "work sans",
+      sans-serif;
+    color: #fffffe;
+    line-height: 0.9em;
+    letter-spacing: -0.05em;
+    width: 100%;
+
+    .highlight {
+      color: #d2a756;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .tagLineContainer {
+
+    @media only screen and (max-width: 425px) {
+      margin: 2.5em auto 0;
+    }
+
+    .tagLineWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 250px;
+      margin: 0 auto;
+
+      .iconImg {
+        align-self: flex-start;
+      }
+
+      .text {
+        font-size: 56px;
+      }
+    }
+  }
+}

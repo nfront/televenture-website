@@ -1,0 +1,25 @@
+.teamImageWrapper {
+  position: relative !important;
+  height: 645px !important;
+  overflow: hidden;
+
+  .teamImage {
+    height: 800px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .teamImageWrapper {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  .teamImageWrapper {
+    height: 415px !important;
+
+    .teamImage {
+      height: 550px;
+    }
+  }
+}

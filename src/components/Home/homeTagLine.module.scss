@@ -1,0 +1,24 @@
+.taglineContainer {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  background-color: #d5dee3;
+  overflow: hidden;
+
+  .tagBackground {
+    position: absolute !important;
+    height: 1200px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .taglineContainer {
+    min-height: 640px;
+    .tagBackground {
+      height: 1005px;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.form {
+  max-width: 375px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  input,
+  textarea {
+    border: none;
+    outline: none;
+    line-height: 36px;
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: transform 0.5s;
+    background-color: rgba(64, 102, 124, 0.33);
+
+    &:required {
+      box-shadow: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input {
+    height: 36px;
+  }
+
+  .inputLabel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    input,
+    textarea {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: rgba(1, 0, 37, 1);
+      color: #D5DEE3;
+      position: absolute;
+      padding: 1em;
+      border: 0;
+      width: 100%;
+      transition: transform 0.5s;
+      right: 100%;
+      &:focus {
+        transform: translateX(100%);
+      }
+      &:focus + .inputCover {
+        transform: translateX(100%)
+      }
+    }
+
+    &.hasValue {
+      input, textarea {
+        transform: translateX(100%);
+      }
+      .inputCover {
+        transform: translateX(100%);
+      }
+    }
+
+    .inputCover {
+      position: relative;
+      line-height: 36px;
+      cursor: text;
+      font-size: 13px;
+      letter-spacing: 3px;
+      transition: transform 0.5s;
+      background-color: rgba(64, 102, 124, 0.33);
+      padding-left: 15px;
+      color: #B4CAD6;
+      &.textareaCover {
+        min-height: 150px;
+      }
+    }
+  }
+
+  .contactDetails {
+    display: flex;
+    margin: 0 0 12px 0;
+    width: 100%;
+  }
+
+  .phone {
+    width: 100%;
+    margin: 0 0 12px 0;
+  }
+
+  .textarea {
+    margin: 0 0 1em 0;
+    textarea {
+      line-height: 1.6;
+      min-height: 150px;
+      resize: vertical;
+    }
+  }
+}
+
+.submit {
+  font: normal normal 700 15px/1.4em worksans-extralight, "work sans",
+    sans-serif;
+  font-weight: 400;
+  background-color: rgba(210, 167, 86, 1);
+  color: #010025;
+  cursor: pointer;
+  border: 0;
+  min-width: 20%;
+  max-width: calc(50% - 30px);
+  min-height: 36px;
+  padding: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .form {
+    .contactDetails {
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      .nameLabel {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

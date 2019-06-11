@@ -1,0 +1,58 @@
+.withBackgroundCover {
+  position: relative;
+  .bgInner {
+    position: relative;
+    height: 380px;
+    width: 100%;
+    overflow: hidden;
+
+    @media only screen and (max-width: 768px) {
+      height: 300px;
+    }
+
+    @media only screen and (max-width: 425px) {
+      height: 220px;
+    }
+    .investorBackground {
+      height: 600px;
+
+      @media only screen and (max-width: 768px) {
+        height: 400px;
+      }
+
+      @media only screen and (max-width: 425px) {
+        height: 280px;
+      }
+
+    }
+  }
+  .imageContent {
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 66px;
+    color: #bc9b5d;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+  .televentureIcon {
+    height: 70px;
+    width: 70px;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    @media only screen and (max-width: 425px) {
+      height: 50px;
+      width: 50px;
+    }
+  }
+}

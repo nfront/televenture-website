@@ -1,0 +1,203 @@
+.fundsDetailContainer {
+    display: flex;
+    min-height: 594px;
+    position: relative;
+    background-color: #071f4e;
+    justify-content: center;
+    .cardsWrapper {
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        justify-content: center;
+        .card {
+            position: relative;
+            height: 100%;
+            .hoverDiv {
+                visibility: hidden;
+                pointer-events: none;
+                opacity: 0;
+            }
+            .backgroundDiv {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background-color: #010024;
+            }
+            .cardInner {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 2;
+                top: 20%;
+                .title {
+                    width: 219px;
+                    min-height: 21px;
+                    pointer-events: none;
+                    visibility: inherit;
+                    position: relative;
+                    margin: 0px 0px 10px 0;
+                    left: 28px;
+                    @media only screen and (min-width: 769px) and (max-width: 940px) {
+                        width: 230px;
+                        left: 0;
+                    }
+                    .icon {
+                        width: 30px;
+                        height: 20px;
+                    }
+                    .label {
+                        font-size: 45px;
+                        line-height: 1.2em;
+                        letter-spacing: 0.15em;
+                        color: rgb(188, 155, 93);
+                    }
+                    .fundLabel {
+                        font-size: 22px;
+                        line-height: 1.2em;
+                        font-family: worksans-extralight, work sans, sans-serif;
+                        letter-spacing: 0.15em;
+                        color: white;
+                        &.light {
+                            color: #40667c;
+                        }
+                    }
+                }
+            }
+            .tabWrapper {
+                z-index: 5;
+                position: absolute;
+                display: flex;
+                bottom: 20%;
+                width: 100%;
+                .tabButton {
+                    text-transform: uppercase;
+                    position: relative;
+                    align-self: center;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .link {
+            @media only screen and (min-width: 769px) {
+                width: 300px;
+                flex: 0 1 auto;
+                height: 500px;
+                margin: 2em 1em;
+                &:hover {
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                    .hoverDiv {
+                        visibility: visible;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        z-index: 4;
+                        display: flex;
+                        justify-content: center;
+                        background-color: rgb(188, 155, 93);
+                        opacity: 1;
+                        transition: visibility 0s, opacity 1s;
+                        .fundName {
+                            position: absolute;
+                            top: 24%;  
+                            left: 14%;
+                            line-height: 1.7;
+                            width: 230px;
+                            min-height: 21px;
+                            color: #010025;
+                            font-size: 27px;
+                            font-family: worksans-extralight, work sans, sans-serif;
+                            letter-spacing: 0.15em;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+            @media only screen and (min-width: 940px) {
+                flex: 0 1 auto;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .fundsDetailContainer {
+        .cardsWrapper {
+            flex-direction: column;
+            width: 100%;
+            .link {
+                height: 320px;
+                .card {
+                    width: 100%;
+                    &:hover {
+                        .hoverDiv {
+                            .fundName {
+                                top: 14%;
+                                width: 280px;
+                            }
+                        }
+                    }
+                    .cardInner {
+                        .title {
+                            margin: 0 auto;
+                        }
+                    }
+                    .tabWrapper {
+                        .tabButton {
+                            width: 350px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .fundsDetailContainer {
+        .cardsWrapper {
+            .link {
+                height: 240px;
+                .card {
+                    &:hover {
+                        .hoverDiv {
+                            visibility: hidden;
+                            opacity: 0;
+                            pointer-events: none;
+                        }
+                    }
+                    .cardInner {
+                        .title {
+                            left: 0;
+                            text-align: center;
+                            .icon {
+                                margin: 0 auto 0.8em;
+                            }
+                            .label {
+                                font-size: 29px;
+                            }
+                            .fundLabel {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                    .tabWrapper {
+                        bottom: 2em;
+                        .tabButton {
+                            height: 48px;
+                            width: 280px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

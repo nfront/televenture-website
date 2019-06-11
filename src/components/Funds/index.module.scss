@@ -1,0 +1,28 @@
+.fundsContainer {
+  position: relative;
+  display: flex;
+  height: auto;
+
+  .fundsBackground {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed !important;
+  }
+
+  .wrapper {
+    position: relative;
+    width: 100%;
+
+    .pageTitle {
+      position: relative;
+      display: flex;
+      letter-spacing: 0.5em;
+      color: #d2a756;
+      font-size: 34px;
+      justify-content: center;
+      margin: 1.6em 0 1.2em 0;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+.descriptionContainer {
+  height: 610px;
+  background-color: #050733;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .contentWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 585px;
+    width: 100%;
+    min-height: 67px;
+    font-size: 21px;
+
+    .description {
+      position: relative;
+      width: 100%;
+      padding-top: 3em;
+      text-align: center;
+      line-height: 1.8em;
+      color: #d5dee3;
+      font-family: din-next-w01-light, din-next-w02-light, din-next-w10-light,
+        sans-serif;
+    }
+
+    .navigationIcon {
+      font-size: 21px;
+      line-height: 1.8em;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+
+      .navigationLink {
+        text-decoration: underline;
+        font-style: normal;
+        color: #bc9b5d;
+        font-family: din-next-w01-light, din-next-w02-light, din-next-w10-light,
+          sans-serif;
+      }
+    }
+
+    .companyLogo {
+      width: 220px;
+      height: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .descriptionContainer {
+    height: 445px;
+    
+    .contentWrapper {
+      .description {
+        font-size: 18px;
+        padding-top: 2em;
+      }
+
+      .companyLogo {
+        width: 155px;
+        height: 14px;
+        top: 0.8em;
+      }
+    }
+  }
+}

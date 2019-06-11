@@ -1,0 +1,191 @@
+.cardWrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: 20px 0;
+
+  .cardContent {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    max-width: 980px;
+    width: 100%;
+    background-color: white;
+    flex: 1 1 auto;
+
+    .cardHeader {
+      height: 48px;
+      pointer-events: none;
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+
+      .title {
+        display: flex;
+        align-items: center;
+        background-color: rgba(1, 0, 37, 1);
+        position: relative;
+        height: 100%;
+        width: 50%;
+        padding-left: 28px;
+        font: normal normal normal 40px/1.4em proxima-n-w01-reg, sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        color: #b4cad6;
+        word-wrap: break-word;
+        text-align: start;
+        font-size: 17px;
+      }
+
+      .field {
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex: 1 0 auto;
+        align-items: center;
+        border: 0px solid rgba(65, 65, 65, 1);
+        background-color: rgba(64, 102, 124, 0.49);
+        border-radius: 0;
+        letter-spacing: 0.08em;
+        font-size: 16px;
+
+        .founded {
+          width: 40%;
+          padding-left: 1em;
+        }
+
+        .sector {
+          width: 60%;
+          padding-left: 1em;
+        }
+
+        .heading {
+          color: black;
+          padding-right: 0.55em;
+        }
+
+        .value {
+          color: #40667c;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .cardBody {
+      display: flex;
+      flex-wrap: wrap-reverse;
+      min-height: 250px;
+      flex: 1 1 auto;
+
+      .cardData {
+        display: flex;
+        flex-direction: column;
+        max-width: 70%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2em;
+        flex: 1 1 auto;
+
+        @media only screen and (min-width: 769px) and (max-width: 900px) {
+          max-width: 64%;
+        }
+
+        .description {
+          font: normal normal normal 17px/1.4em din-next-w01-light,
+            din-next-w02-light, din-next-w10-light, sans-serif;
+          color: #414141;
+          word-wrap: break-word;
+          text-align: start;
+          height: auto;
+          width: 100%;
+          margin-bottom: 1.8em;
+          padding-top: 2em;
+        }
+
+        .cardFooter {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          width: 100%;
+          font-size: 15px;
+          flex: 1 0 auto;
+          padding-bottom: 2em;
+          align-items: center;
+
+          h4 {
+            margin-bottom: 1em;
+          }
+          .orgValue {
+            font: normal normal normal 40px/1.4em proxima-n-w01-reg, sans-serif;
+            color: #414141;
+            font-size: 15px;
+            font-weight: 600;
+            margin-left: 1.5em;
+            letter-spacing: 0.1em;
+          }
+
+          .heading {
+            color: #414141;
+            font-family: worksans-semibold, work sans, sans-serif;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .heroImageContainer {
+        width: 270px;
+        height: 170px;
+        align-self: center;
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+
+        .heroImage {
+          filter: grayscale(100%) saturate(100%);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .cardWrapper {
+    .cardContent {
+      .cardHeader {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+
+        .title {
+          width: 100%;
+          height: 48px;
+        }
+
+        .field {
+          min-height: 76px;
+          width: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .founded,
+          .sector {
+            width: 100%;
+          }
+        }
+      }
+
+      .cardBody {
+        justify-content: center;
+        width: 100%;
+
+        .cardData {
+          max-width: 90%;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

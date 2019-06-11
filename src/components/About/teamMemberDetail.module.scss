@@ -1,0 +1,136 @@
+.teamMemberContainer {
+    display: flex;
+
+    .iconContainer {
+        width: 62px;
+        height: 62px;
+        position: absolute;
+        top: 50px;
+        border-radius: 50%;
+        background-color: #050025;
+
+        &:hover {
+            .televentureIcon {
+                display: none;
+            }
+
+            .messageIcon {
+                display: block;
+            }
+        }
+
+        .televentureIcon {
+            width: 100%;
+            top: 8px;
+            transform: scale(0.4);
+
+        }
+
+        .messageIcon {
+            cursor: pointer;
+            display: none;
+            position: absolute;
+            height: 20px;
+            bottom: 50%;
+            right: 50%;
+            transform: translate(50%, 50%)
+        }
+    }
+
+    .subContainer {
+        max-width: 70%;
+        flex-grow: 1;
+        display: flex;
+
+        @media (max-width: 768px) {
+            max-width: 1200px;
+        }
+    }
+
+    &.left {
+        justify-content: flex-end;
+
+        .description {
+            padding: 0 1em 0 80px;
+        }
+
+        .iconContainer {
+            transform: translate(-50%, 50%);
+        }
+    }
+
+    &.right .subContainer {
+        flex-direction: row-reverse;
+
+        .description {
+            text-align: right;
+            margin-right: 80px;
+        }
+
+        .iconContainer {
+            right: 0;
+            transform: translate(50%, 50%);
+        }
+    }
+
+    .description {
+        .header {
+            margin: 50px 0 25px 0;
+
+            .name {
+                font-size: 20px;
+                font-family: proxima-n-w01-reg, sans-serif;
+                padding-bottom: 8px;
+            }
+        }
+    }
+
+    .image {
+        width: 359px;
+        height: 100%;
+        flex: 0 0 auto;
+
+        picture img {
+            transition: all 1s ease !important;
+            transform: scale3d(1, 1, 1);
+            &:hover {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .teamMemberContainer {
+        &.left .subContainer,
+        &.right .subContainer  {
+            flex-direction: column;
+            text-align: center;
+        }
+        &.left  {
+            .description {
+                padding-left: 0;
+                margin: 4vw;
+            }
+        }
+        .iconContainer {
+            left: 50%;
+            top: 0;
+        }
+        &.left .subContainer .iconContainer,
+        &.right .subContainer .iconContainer {
+            transform: translate(-50%, -50%)
+        }
+        &.right .subContainer {
+            .description {
+                text-align: center;
+                margin: 4vw;
+            }
+        }
+        .image {
+            width: 100%;
+            height: 300px;
+        }
+    }
+  }

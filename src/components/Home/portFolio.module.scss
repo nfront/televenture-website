@@ -1,0 +1,123 @@
+.portFolioContainer {
+  position: relative;
+  height: 882px;
+  display: flex;
+  justify-content: center;
+
+  .portFolioBackground {
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  .backgroundTriangle {
+    position: absolute;
+    height: 0;
+    width: 0;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 500px solid transparent;
+    border-top: 881px solid #010025;
+    border-right: 500px solid transparent;
+  }
+
+  .contentWrapper {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    flex: 1 1 auto;
+    height: 28em;
+    transform: translateY(-15%);
+
+    .logo {
+      width: 220px;
+      height: 20px;
+      object-fit: fill;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+
+      .textContent {
+        max-width: 549px;
+        min-height: 21px;
+        pointer-events: none;
+
+        .contentDescription {
+          font-size: 21px;
+          color: #fafafa;
+          margin: 0;
+          line-height: normal;
+          letter-spacing: normal;
+          text-align: center;
+          font-family: din-next-w01-light, din-next-w02-light,
+            din-next-w10-light, sans-serif;
+        }
+
+        .fields {
+          margin-top: 3em;
+
+          .titleField {
+            font-size: 21px;
+            line-height: 1.9em;
+            text-align: center;
+            color: #fafafa;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+    .logoIcon {
+      width: 52px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .portFolioContainer {
+    height: 715px;
+    .backgroundTriangle {
+      border-top: 715px solid #010025;
+    }
+    .contentWrapper {
+      .content {
+        padding: 1em;
+
+        .textContent {
+          .contentDescription {
+            font-size: 19px;
+            line-height: 1.5em;
+          }
+        }
+      }
+    }
+    .logoIcon {
+      top: 2em;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .portFolioContainer {
+    height: 650px;
+
+    .backgroundTriangle {
+      border-top: 650px solid #010025;
+      border-left: 300px solid transparent;
+      border-right: 300px solid transparent;
+    }
+  }
+}
