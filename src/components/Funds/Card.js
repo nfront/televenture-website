@@ -23,7 +23,7 @@ const Card = ({ details }) => {
         <div className={styles.cardBody}>
           <div className={styles.cardData}>
             <div className={styles.description}>
-              {description && <p>BUSINESS DESCRIPTION: {description.description}</p>}
+              {description && <p>{description.description}</p>}
             </div>
             <div className={styles.cardFooter}>
               <h4>
