@@ -1,11 +1,11 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import classnames from 'classnames';
-import styles from './contactSection.module.scss';
-import ContactBackgroundSection from './ContactBackgroundSection';
-import TeleventureIconGold from '../TeleventureIconGold';
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import classnames from "classnames";
+import styles from "./contactSection.module.scss";
+import ContactBackgroundSection from "./ContactBackgroundSection";
+import TeleventureIconGold from "../TeleventureIconGold";
 
-const ContactSection = props => {
+const ContactSection = (props) => {
   const thisPage = React.createRef();
 
   const data = useStaticQuery(graphql`
@@ -20,9 +20,10 @@ const ContactSection = props => {
   `);
   const { contentfulContact } = data;
   const { scrollToFooter } = props;
+
   return (
     <div ref={thisPage} className={styles.contactSection}>
-      <ContactBackgroundSection className={classnames('backgroundImage')}>
+      <ContactBackgroundSection className={classnames("backgroundImage")}>
         <div className="imageOverlay" />
         <div className={styles.backgroundContent}>CONTACT</div>
       </ContactBackgroundSection>
@@ -36,7 +37,7 @@ const ContactSection = props => {
               href="https://www.google.no/search?q=televenture+capital+as+address&amp;stick=H4sIAAAAAAAAAOPgE-LWT9c3LMkpyzNOztCSzU620s_JT04syczPgzOsElNSilKLiwEziTQZLgAAAA&amp;ludocid=13011333457258383551&amp;sa=X&amp;ved=2ahUKEwiFifqPlsreAhUCWCwKHZzdBG4Q6BMwEnoECAQQAw"
               target="_blank"
               className={styles.cardKey}
-              style={{ textDecoration: 'none' }}
+              style={{ textDecoration: "none" }}
             >
               ADDRESS:
             </a>
@@ -45,12 +46,16 @@ const ContactSection = props => {
           <div className={styles.listItem}>
             <span className={styles.cardKey}>
               EMAIL:&nbsp;
-              <a href={`mailto:${contentfulContact.email}`}>{contentfulContact.email}</a>
+              <a href={`mailto:${contentfulContact.email}`}>
+                {contentfulContact.email}
+              </a>
             </span>
           </div>
           <div className={styles.listItem}>
             <span className={styles.cardKey}>TEL:&nbsp;</span>
-            <a href={`tel:${contentfulContact.phone.replace(/\(|\)/g, '')}`}>{contentfulContact.phone}</a>
+            <a href={`tel:${contentfulContact.phone.replace(/\(|\)/g, "")}`}>
+              {contentfulContact.phone}
+            </a>
           </div>
           <div className={styles.listItem}>
             <span className={styles.cardKey}>ORG NR:&nbsp;</span>
@@ -65,5 +70,5 @@ const ContactSection = props => {
   );
 };
 
-ContactSection.displayName = 'ContactSection';
+ContactSection.displayName = "ContactSection";
 export default ContactSection;

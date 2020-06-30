@@ -1,17 +1,15 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Background from './BackgroundSection';
-import styles from './index.module.scss';
-import InquiriesCard from './InquiriesCard';
-import InvestorsTable from './Table';
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Background from "./BackgroundSection";
+import styles from "./index.module.scss";
+import InquiriesCard from "./InquiriesCard";
+import InvestorsTable from "./Table";
 
 const Investors = () => {
   const data = useStaticQuery(graphql`
-    query InvestorPageDetails {
-      contentfulInvestorsDescription {
-        description {
-          description
-        }
+    query {
+      contentfulInvestorsDescriptionDescriptionTextNode {
+        description
       }
       allContentfulInvestorEvents {
         totalCount
@@ -31,19 +29,25 @@ const Investors = () => {
       }
     }
   `);
-  const { contentfulInvestorsDescription, allContentfulInvestorEvents, contentfulInvestorInquiries } = data;
-  const { description } = contentfulInvestorsDescription;
+  const {
+    contentfulInvestorsDescriptionDescriptionTextNode,
+    allContentfulInvestorEvents,
+    contentfulInvestorInquiries,
+  } = data;
+  const { description } = contentfulInvestorsDescriptionDescriptionTextNode;
   const { nodes: tableData } = allContentfulInvestorEvents;
   return (
     <div className={styles.investorsContainer}>
       <Background content="INVESTORS" />
-      <div className={styles.description}>{description.description}</div>
-      <div className={styles.tableInfo}>WE LOOK FORWARD TO MEETING INVESTORS AT THE FOLLOWING EVENTS:</div>
+      <div className={styles.description}>{description}</div>
+      <div className={styles.tableInfo}>
+        WE LOOK FORWARD TO MEETING INVESTORS AT THE FOLLOWING EVENTS:
+      </div>
       <InvestorsTable tableData={tableData} />
       <InquiriesCard {...contentfulInvestorInquiries} />
     </div>
   );
 };
 
-Investors.displayName = 'InvestorsSection';
+Investors.displayName = "InvestorsSection";
 export default Investors;
