@@ -78,7 +78,6 @@ const Card = ({
   featured,
   ...props
 }) => {
-  console.log(heroImage);
   return (
     <Post featured={featured}>
       <Link to={`/${slug}/`}>
