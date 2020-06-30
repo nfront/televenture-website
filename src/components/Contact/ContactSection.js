@@ -63,7 +63,7 @@ const ContactSection = (props) => {
           </div>
         </div>
         <div className={styles.fillFormInfo} onClick={scrollToFooter}>
-          YOU ARE WELCOME TO FILL IN OUR CONTACT FORM BELOW >
+          YOU ARE WELCOME TO FILL IN OUR CONTACT FORM BELOW {'>'}
         </div>
       </div>
     </div>
